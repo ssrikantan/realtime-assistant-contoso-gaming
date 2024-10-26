@@ -4,3 +4,5 @@ yfinance
 plotly
 atlassian-python-api
 pyodbc
+websockets
+azure-search-documents

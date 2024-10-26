@@ -5,19 +5,19 @@ import os
 
 class DefaultConfig:
     """ Bot Configuration """
-
+    # API key either from Azure OpenAI, or OpenAI
     az_openai_key = ""
-    az_openai_baseurl = "https://[].openai.azure.com/"
-    az_open_ai_endpoint_name = ""
-    az_openai_type = "azure"
+    
+    # These apply only when using Azure OpenAI
+    az_open_ai_endpoint_name = "aoai-gpt4-001"
     az_openai_api_version = "2024-10-01-preview"
     deployment_name = "gpt-4o" 
 
     attlassian_api_key = ''
-    attlassian_user_name = '[].com'
-    attlassian_url = 'https://sansricontoso.atlassian.net/'
+    attlassian_user_name = '<>@hotmail.com'
+    attlassian_url = 'https://<>.atlassian.net/'
     
-    ai_search_url = "https://[].search.windows.net"
+    ai_search_url = "https://<>.search.windows.net"
     ai_search_key = ""
     ai_index_name = "contoso-gaming-index"
     ai_semantic_config = "contoso-gaming-config"
@@ -33,5 +33,5 @@ class DefaultConfig:
 
     az_db_server = "<>.database.windows.net"
     az_db_database = "cdcsampledb"
-    az_db_username = "<>"
+    az_db_username = ""
     az_db_password = ""

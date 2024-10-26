@@ -7,7 +7,7 @@ from uuid import uuid4
 from chainlit.logger import logger
 
 from realtime import RealtimeClient
-from realtime.tools import tools
+from realtime.tools import tools, init_connections
 
 # # Variable to store the message ID for updates
 # message_id = None
@@ -56,8 +56,8 @@ async def setup_openai_realtime(system_prompt: str):
 
     async def handle_audio_transcript_completed(event):
         """Used to populate the chat context with transcription once an audio transcript is completed."""
-        print("AUDIO TRANSCRIPT COMPLETED...")
-        print(event)
+        # print("AUDIO TRANSCRIPT COMPLETED...")
+        # print(event)
         response_text = event.get("transcript")
         try:
 
@@ -122,6 +122,7 @@ async def start():
         content="Hi, Welcome! You are now connected to Contoso Gaming Services' AI Assistant. Press `P` to talk to her!"
     ).send()
     await setup_openai_realtime(system_prompt=system_prompt + "\n\n user_name: Srikantan")
+    init_connections()
     # await setup_openai_realtime(system_prompt=system_prompt)
 
 @cl.on_message

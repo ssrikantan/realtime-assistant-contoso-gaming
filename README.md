@@ -12,3 +12,9 @@ Here are the key features of this demo application, beyond the features in the R
 - have a transcript generated accompanying the audio conversation back and forth
 - integration with Azure SQL Database, Jira Cloud and Azure AI Search using Tool calling
 
+# Dependencies
+- Azure SQL Database
+- Jira Cloud
+- Azure AI Search
+
+The tool calling here uses the above services to demonstrate how you can integrate with these services in a multimodal AI Assistant.

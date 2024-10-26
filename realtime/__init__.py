@@ -119,8 +119,8 @@ class RealtimeAPI(RealtimeEventHandler):
         async for message in self.ws:
             event = json.loads(message)
             if event['type'] == "error":
-                logger.error("ERROR", message)
-                # print("Some error !!", message)
+                # logger.error("ERROR", message)
+                print("Some error !!", message)
             self.log("received:", event)
             self.dispatch(f"server.{event['type']}", event)
             self.dispatch("server.*", event)
@@ -331,7 +331,8 @@ class RealtimeConversation:
         delta = event['delta']
         item = self.item_lookup.get(item_id)
         if not item:
-            raise Exception(f'response.audio_transcript.delta: Item "{item_id}" not found')
+            # raise Exception(f'response.audio_transcript.delta: Item "{item_id}" not found')
+            logger.error(f"response.audio_transcript.delta: Item {item_id} not found")
         item['content'][content_index]['transcript'] += delta
         item['formatted']['transcript'] += delta
         return item, {'transcript': delta}
